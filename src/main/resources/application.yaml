@@ -1,3 +1,14 @@
 spring:
   application:
     name: support-assistant
+  ai:
+    model:
+      # Which provider backs the ChatClient: ollama (free, local) or anthropic (paid API)
+      chat: ollama
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: llama3.2
+    anthropic:
+      # Never put the key here: it comes from an environment variable
+      api-key: ${ANTHROPIC_API_KEY:}
